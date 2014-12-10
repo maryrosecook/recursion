@@ -6,8 +6,8 @@ def max(numbers, largest_so_far=None):
     else:
         return max(numbers[1:], largest_so_far)
 
-print str(max([])) + " should be None"
-print str(max([1])) + " should be 1"
-print str(max([2, 1])) + " should be 2"
-print str(max([1, 2, 3])) + " should be 3"
-print str(max([-1, -2, -3])) + " should be -1"
+print str(max([])) + " == None"
+print str(max([1])) + " == 1"
+print str(max([2, 1])) + " == 2"
+print str(max([1, 2, 3])) + " == 3"
+print str(max([-1, -2, -3])) + " == -1"
