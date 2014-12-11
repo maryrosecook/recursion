@@ -1,3 +1,7 @@
+"""write a function that returns the last index of a given
+input in a list. Negative one gets returned if the element
+doesn't occur in the list. Don't go from the back"""
+
 def last_index_of(item, arr, i=0, last_index=-1):
     if i >= len(arr):
         return last_index

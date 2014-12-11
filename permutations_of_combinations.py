@@ -1,3 +1,8 @@
+"""List all of the series' of letters (non-dictionary words,
+'asd' and 'w' count) that can be formed with some scrabble tiles
+on a blank board. (In scrabble, you don't have to use all your
+tiles at once) (permutations of combinations)"""
+
 from permutations import permutations
 import itertools
 

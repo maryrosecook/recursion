@@ -1,3 +1,5 @@
+"""write a function that returns the sum of a list"""
+
 def sum(arr):
     if not arr:
         return 0

@@ -1,3 +1,5 @@
+"""Write a naive Fibonacci function recursively."""
+
 def fib(n):
     if n == 1 or n == 2:
         return 1

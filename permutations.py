@@ -1,3 +1,5 @@
+"""Generate all the reorderings of a set of letters. (permutations)"""
+
 from test import test
 import itertools
 

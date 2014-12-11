@@ -1,3 +1,5 @@
+"""Write a recursive function to compute the sum of a binary tree of numbers"""
+
 class Node(object):
     def __init__(self, value, l=None, r=None):
         self.value = value
