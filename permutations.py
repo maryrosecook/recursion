@@ -10,11 +10,11 @@ def flatten(l):
             f.append(item)
     return f
 
-def permutations(s, prefix=""):
-    if not s:
+def permutations(s, depth, prefix=""):
+    if not s or not depth:
         return [prefix]
     else:
-        return [permutations(s[:i] + s[i+1:], prefix + c)
+        return [permutations(s[:i] + s[i+1:], depth - 1, prefix + c)
                 for i, c in enumerate(s)]
 
 ## test helpers
@@ -35,9 +35,21 @@ def str_chars(cs):
 ## tests
 
 s = "abcd"
-test(sorted(flatten(permutations(s))),
-     sorted(str_chars(itertools.permutations(s, len(s)))))
+test(sorted(flatten(permutations(s, 2))),
+     sorted(str_chars(itertools.permutations(s, 2))))
+
+s = "abcd"
+test(sorted(flatten(permutations(s, 4))),
+     sorted(str_chars(itertools.permutations(s, 4))))
+
+s = "abcd"
+test(sorted(flatten(permutations(s, 1))),
+     sorted(str_chars(itertools.permutations(s, 1))))
+
+s = "abcd"
+test(sorted(flatten(permutations(s, 0))),
+     sorted(str_chars(itertools.permutations(s, 0))))
 
 s = ""
-test(sorted(flatten(permutations(s))),
-     sorted(str_chars(itertools.permutations(s, len(s)))))
+test(sorted(flatten(permutations(s, 0))),
+     sorted(str_chars(itertools.permutations(s, 0))))
