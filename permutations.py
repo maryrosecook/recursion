@@ -10,12 +10,15 @@ def flatten(l):
             f.append(item)
     return f
 
-def permutations(s, depth, prefix=""):
-    if not s or not depth:
-        return [prefix]
-    else:
-        return [permutations(s[:i] + s[i+1:], depth - 1, prefix + c)
-                for i, c in enumerate(s)]
+def permutations(s, depth):
+    def p(s, depth, prefix):
+        if not s or not depth:
+            return [prefix]
+        else:
+            return [p(s[:i] + s[i+1:], depth - 1, prefix + c)
+                    for i, c in enumerate(s)]
+
+    return flatten(p(s, depth, ""))
 
 ## test helpers
 
